@@ -15,7 +15,6 @@ on:
   pull_request:
     branches:
       - develop
-    types: [closed]
   #   types: [opened, reopened, synchronize]
 
   # Allows you to run this workflow manually from the Actions tab
@@ -40,6 +39,5 @@ jobs:
       # vercel deploy --prebuilt skips the build step on Vercel and uploads the previously generated .vercel/output folder from the GitHub Action.
       - name: Deploy Project Artifacts to Vercel
         run: yarn vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }}
-# 1cfXzaIQeWab1PEdbURvtwli
 # comment1
 # comment2
