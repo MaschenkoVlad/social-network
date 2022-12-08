@@ -1,0 +1,43 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Deploy Social Network to Vercel staging
+
+env:
+  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the develop branch
+  # push:
+  #   branches: [develop]
+
+  pull_request:
+    branches:
+      - develop
+  #   types: [opened, reopened, synchronize]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: yarn
+      - run: yarn install --immutable
+      - run: yarn vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}
+      # vercel build allows you to build your project within your own CI setup, whether it be GitHub Actions or your own in-house CI,
+      # and upload only those build artifacts (and not the source code) to Vercel to create a deployment.
+      - name: Build Project Artifacts
+        run: yarn vercel build --token=${{ secrets.VERCEL_TOKEN }}
+      # vercel deploy --prebuilt skips the build step on Vercel and uploads the previously generated .vercel/output folder from the GitHub Action.
+      - name: Deploy Project Artifacts to Vercel
+        run: yarn vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }}
+# comment1
+# comment2
