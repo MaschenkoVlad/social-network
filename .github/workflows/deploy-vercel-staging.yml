@@ -41,6 +41,3 @@ jobs:
       # vercel deploy --prebuilt skips the build step on Vercel and uploads the previously generated .vercel/output folder from the GitHub Action.
       - name: Deploy Project Artifacts to Vercel
         run: yarn vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }}
-# comment1
-# comment2
-# comment3
