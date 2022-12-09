@@ -42,3 +42,4 @@ jobs:
       - name: Deploy Project Artifacts to Vercel
         run: yarn vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }}
 # test 1
+# test 2
