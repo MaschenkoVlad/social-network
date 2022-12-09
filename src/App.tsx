@@ -10,9 +10,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <Counter />
-        <p>
-         VLADIK EBAAASHHH
-        </p>
+        <p>TEST</p>
         <span>
           <span>Learn </span>
           <a className="App-link" href="https://reactjs.org/" target="_blank" rel="noopener noreferrer">
