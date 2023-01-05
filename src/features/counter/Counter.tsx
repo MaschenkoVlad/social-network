@@ -5,7 +5,7 @@ import { decrement, increment, incrementByAmount, incrementAsync, incrementIfOdd
 
 import { useAppSelector, useAppDispatch } from "../../app/hooks"
 
-export function Counter() {
+export default function Counter() {
   const count = useAppSelector(selectCount)
   const dispatch = useAppDispatch()
   const [incrementAmount, setIncrementAmount] = useState("2")
