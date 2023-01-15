@@ -1,8 +1,15 @@
 import { Routes, Route } from "react-router-dom"
 
-import { routes } from "./routes"
+interface IProp {
+  routes: IRoute[]
+}
+interface IRoute {
+  name: string
+  path: string
+  Component: React.ElementType
+}
 
-const AppRoutes = (): JSX.Element => {
+const AppRoutes: React.FC<IProp> = ({ routes }): JSX.Element => {
   return (
     <>
       <Routes>

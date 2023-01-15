@@ -8,6 +8,7 @@ import reportWebVitals from "./reportWebVitals"
 import AppRoutes from "./routes"
 
 import "./index.css"
+import { routes } from "./routes/routes"
 
 const container = document.getElementById("root")!
 const root = createRoot(container)
@@ -16,7 +17,7 @@ root.render(
   <React.StrictMode>
     <Provider store={store}>
       <BrowserRouter>
-        <AppRoutes />
+        <AppRoutes routes={routes} />
       </BrowserRouter>
     </Provider>
   </React.StrictMode>,
