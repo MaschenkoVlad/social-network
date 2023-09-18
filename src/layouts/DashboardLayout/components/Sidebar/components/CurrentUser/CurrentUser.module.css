@@ -1,0 +1,27 @@
+@import "../../../../../../index.css";
+
+.root {
+  padding: var(--card-padding);
+  background-color: var(--color-white);
+  border-radius: var(--card-border-radius);
+  display: flex;
+  align-items: center;
+  column-gap: 1rem;
+  width: 100%;
+}
+
+.profilePhoto {
+  width: 2.7rem;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.userBio {
+  display: flex;
+  flex-direction: column;
+}
+
+.userNickname {
+  color: var(--color-gray);
+}
