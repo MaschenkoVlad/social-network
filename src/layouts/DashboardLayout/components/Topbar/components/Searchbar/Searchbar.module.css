@@ -1,0 +1,19 @@
+@import "../../../../../../index.css";
+
+.searchBar {
+  background-color: var(--color-light);
+  border-radius: var(--border-radius);
+  padding: var(--search-padding);
+}
+
+.searchBar input[type="search"] {
+  background: transparent;
+  width: 30vw;
+  margin-left: 1rem;
+  font-size: 0.9rem;
+  color: var(--color-dark);
+}
+
+.searchBar input[type="search"]::placeholder {
+  color: var(--color-gray);
+}

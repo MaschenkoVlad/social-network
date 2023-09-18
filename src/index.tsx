@@ -1,24 +1,21 @@
 import React from "react"
 import { createRoot } from "react-dom/client"
 import { Provider } from "react-redux"
-import { BrowserRouter } from "react-router-dom"
+
+import App from "./App"
 
 import { store } from "./app/store"
 import reportWebVitals from "./reportWebVitals"
-import AppRoutes from "./routes"
 
 import "./index.css"
-import { routes } from "./routes/routes"
 
-const container = document.getElementById("root")!
+const container = document.getElementById("root") as HTMLDivElement
 const root = createRoot(container)
 
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <BrowserRouter>
-        <AppRoutes routes={routes} />
-      </BrowserRouter>
+      <App />
     </Provider>
   </React.StrictMode>,
 )

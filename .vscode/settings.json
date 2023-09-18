@@ -28,7 +28,7 @@
   ],
 
   // Дополнительный словарь для Code Spell Checker
-  "cSpell.words": ["antd", "reduxjs", "stylelint"],
+  "cSpell.words": ["antd", "Formik", "reduxjs", "stylelint"],
 
   // Подсветка комментариев с приставкой TODO
   "todohighlight.keywords": [

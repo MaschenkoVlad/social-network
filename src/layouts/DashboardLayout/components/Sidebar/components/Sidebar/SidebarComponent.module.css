@@ -1,0 +1,29 @@
+@import "../../../../../../index.css";
+
+.root {
+  margin-top: 1rem;
+  background-color: var(--color-white);
+  border-radius: var(--card-border-radius);
+}
+
+.menuItem {
+  display: flex;
+  align-items: center;
+  height: 4rem;
+  cursor: pointer;
+  transition: all 300ms ease;
+  padding-left: 25px;
+}
+
+.menuItem:hover {
+  background-color: var(--color-light);
+}
+
+.menuItem:first-child.active {
+  border-top-left-radius: var(--card-border-radius);
+  overflow: hidden;
+}
+.menuItem:last-child.active {
+  border-bottom-left-radius: var(--card-border-radius);
+  overflow: hidden;
+}

@@ -31,11 +31,11 @@ jobs:
           node-version: 18
           cache: yarn
       - run: yarn install --immutable
-      - run: yarn vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
+      - run: yarn vercel pull --yes --environment=production --token=${{ env.VERCEL_TOKEN }}
       # vercel build allows you to build your project within your own CI setup, whether it be GitHub Actions or your own in-house CI,
       # and upload only those build artifacts (and not the source code) to Vercel to create a deployment.
       - name: Build Project Artifacts
-        run: yarn vercel build --token=${{ secrets.VERCEL_TOKEN }}
+        run: yarn vercel build --token=${{ env.VERCEL_TOKEN }}
       # vercel deploy --prebuilt skips the build step on Vercel and uploads the previously generated .vercel/output folder from the GitHub Action.
       - name: Deploy Project Artifacts to Vercel
-        run: yarn vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }}
+        run: yarn vercel deploy --prebuilt --token=${{ env.VERCEL_TOKEN }}
