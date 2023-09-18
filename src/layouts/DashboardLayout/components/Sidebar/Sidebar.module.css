@@ -1,7 +1,0 @@
-@import "../../../../index.css";
-
-.root {
-  height: max-content;
-  position: sticky;
-  top: var(--sticky-top-left);
-}
