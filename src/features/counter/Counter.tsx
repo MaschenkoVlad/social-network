@@ -5,7 +5,7 @@ import { decrement, increment, incrementByAmount, incrementAsync, incrementIfOdd
 
 import { useAppSelector, useAppDispatch } from "../../app/hooks"
 
-export function Counter() {
+export default function Counter() {
   const count = useAppSelector(selectCount)
   const dispatch = useAppDispatch()
   const [incrementAmount, setIncrementAmount] = useState("2")
@@ -31,13 +31,7 @@ export function Counter() {
           onChange={(e) => setIncrementAmount(e.target.value)}
         />
         <button className={styles.button} onClick={() => dispatch(incrementByAmount(incrementValue))}>
-          Add Amount 12
-        </button>
-        <button className={styles.asyncButton} onClick={() => dispatch(incrementAsync(incrementValue))}>
-          Add Async 12
-        </button>
-        <button className={styles.button} onClick={() => dispatch(incrementIfOdd(incrementValue))}>
-          Add If Odd 12
+          1
         </button>
       </div>
     </div>
